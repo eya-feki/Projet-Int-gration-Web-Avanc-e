@@ -1,0 +1,27 @@
+
+<div>
+
+  <div class="card">
+
+    <img class="card-img-top" src="{{config.bdUrl}}{{product.image}}" alt="" style="width:85%; align-self: center;">
+
+    <div class="card-body">
+
+      <h5 class="card-title">{{product.name}}</h5>
+
+      <p class="card-text">
+
+        Quantity : {{product.stockQte}}
+
+        <br>
+
+        Unit price : {{product.unitPrice}}
+
+      </p>
+
+    </div>
+
+    <button class="card-footer" [routerLink]="['/pageProductDetail',product.reference]">Details</button>
+
+  </div>
+</div>

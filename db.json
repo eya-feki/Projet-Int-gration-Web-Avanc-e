@@ -1,0 +1,164 @@
+{
+  "admins": [
+    {
+      "email": "admin@gmaim.com",
+      "password": "password",
+      "id": "e495"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Soins de la peau",
+      "image": "images/skin_care.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Maquillage",
+      "image": "images/makeup.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Parfums",
+      "image": "images/perfumes.jpg"
+    }
+  ],
+  "products": [
+    {
+      "reference": "prod01",
+      "name": "Crème Hydratante Visage Nivea",
+      "stockQte": 20,
+      "unitPrice": 25.99,
+      "image": "images/creme.jpg",
+      "categoryId": 1,
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "Hydrate parfaitement ma peau!",
+          "date": "2024-06-01"
+        }
+      ],
+      "id": "4c1d",
+      "category": "Soins de la peau"
+    },
+    {
+      "reference": "prod02",
+      "name": "Rouge à Lèvres Mat",
+      "stockQte": 15,
+      "unitPrice": 15.5,
+      "image": "images/rouge.jpg",
+      "categoryId": 2,
+      "comments": [
+        {
+          "rating": 4,
+          "comment": "Belle couleur et tenue longue!",
+          "date": "2024-06-02"
+        }
+      ],
+      "id": "7b6f",
+      "category": "Maquillage"
+    },
+    {
+      "reference": "prod03",
+      "name": "Parfum Éclat d'Été",
+      "stockQte": 10,
+      "unitPrice": 49.99,
+      "image": "images/parfum.jpg",
+      "categoryId": 3,
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "Parfum doux et élégant!",
+          "date": "2024-06-03"
+        }
+      ],
+      "id": "b7cf",
+      "category": "Parfums"
+    },
+    {
+      "reference": "prod04",
+      "name": "Crème Anti-Âge Réparatrice",
+      "stockQte": 25,
+      "unitPrice": 35.99,
+      "image": "images/Creme-anti-age.jpg",
+      "categoryId": 1,
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "Idéal pour réduire les rides!",
+          "date": "2024-06-04"
+        }
+      ],
+      "id": "9e55",
+      "category": "Soins de la peau"
+    },
+    {
+      "reference": "prod05",
+      "name": "Fard à Paupières Palette",
+      "stockQte": 30,
+      "unitPrice": 19.99,
+      "image": "images/eye-shadow.jpg",
+      "categoryId": 2,
+      "comments": [
+        {
+          "rating": 4,
+          "comment": "Des couleurs vibrantes!",
+          "date": "2024-06-05"
+        }
+      ],
+      "id": "99c0",
+      "category": "Maquillage"
+    },
+    {
+      "reference": "prod06",
+      "name": "Eau de Cologne Fraîche",
+      "stockQte": 18,
+      "unitPrice": 29.99,
+      "image": "images/eau-de-cologne.jpg",
+      "categoryId": 3,
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "Parfum léger et agréable!",
+          "date": "2024-06-06"
+        }
+      ],
+      "id": "807e",
+      "category": "Parfums"
+    },
+    {
+      "reference": "prod07",
+      "name": "Masque Purifiant Argile",
+      "stockQte": 20,
+      "unitPrice": 14.99,
+      "image": "images/masque-purifiant-argile.jpg",
+      "categoryId": 1,
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "Ma peau est éclatante!",
+          "date": "2024-06-07"
+        }
+      ],
+      "id": "a7ea",
+      "category": "Soins de la peau"
+    },
+    {
+      "reference": "prod08",
+      "name": "Vernis à Ongles Rouge Passion",
+      "stockQte": 40,
+      "unitPrice": 9.99,
+      "image": "images/vernis-a-ongles-rouge-passion.jpg",
+      "categoryId": 2,
+      "comments": [
+        {
+          "rating": 4,
+          "comment": "Très chic et longue tenue!",
+          "date": "2024-06-08"
+        }
+      ],
+      "id": "5626",
+      "category": "Maquillage"
+    }
+  ]
+}

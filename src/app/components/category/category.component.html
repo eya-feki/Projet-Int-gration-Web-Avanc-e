@@ -1,0 +1,27 @@
+<div>
+  <h2 class="text-center my-4">{{ categoryName }}</h2>
+  <div class="row justify-content-center">
+    <div *ngFor="let product of products" class="col-md-4 col-sm-6 mb-4">
+      <div class="card shadow">
+        <img
+          class="card-img-top"
+          [src]="'assets/' + product.image"
+          [alt]="product.name"
+          style="height: 200px; object-fit: cover;"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">Price: {{ product.unitPrice | currency }}</p>
+
+          <button 
+            class="btn btn-primary" 
+            [routerLink]="['/pageProductDetail', product.reference]"
+            routerLinkActive="active">
+            Details
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p *ngIf="products.length === 0" class="text-center text-muted">No products available for this category.</p>
+</div>

@@ -1,0 +1,40 @@
+/* Section Hero */
+.hero-section {
+    background: linear-gradient(to right, #ffe5ec, #fff2f7);
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 90%;
+    margin: auto;
+  }
+  
+  /* Titre principal */
+  .hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Sous-titre */
+  .hero-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 30px;
+  }
+  
+  /* Image */
+  .hero-image {
+    cursor: pointer; /* Indicate the image is clickable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hero-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  

@@ -1,0 +1,67 @@
+<div *ngIf="product; else loading">
+    <div class="container my-4">
+      <div class="row">
+        <!-- Product Details Card -->
+        <div class="card col-md-5 shadow-sm">
+          <img
+            class="card-img-top rounded"
+            [src]="product?.image ? config.bdUrl + product.image : 'assets/default.jpg'"
+            [alt]="product?.name || 'Product Image'"
+            style="width:85%; align-self: center;"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ product?.name || 'Unknown Product' }}</h5>
+            <div class="card-text">
+              <p><strong>Category:</strong> {{ product?.category ? product.category : 'N/A' }}</p>
+              <p><strong>Unit Price:</strong> {{ product?.unitPrice ? (product.unitPrice | currency) : 'N/A' }}</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-primary" (click)="goBack()">Back</button>
+          </div>
+        </div>
+  
+        <!-- Comments Section -->
+        <div class="form-group col-md-7 row">
+          <div class="col-12 mb-3">
+            <h5>Comments</h5>
+            <div *ngFor="let comment of product?.comments; let i = index" class="border p-2 rounded mb-2">
+              <p><strong>Comment:</strong> {{ comment.comment }}</p>
+              <p><strong>Rating:</strong> {{ comment.rating }}/5</p>
+              <p><strong>Date:</strong> {{ comment.date | date: 'medium' }}</p>
+            </div>
+          </div>
+  
+          <!-- Add a Comment -->
+          <div class="col-12">
+            <div class="mb-2">
+              <label><strong>Your Comment</strong></label>
+              <textarea
+                class="form-control"
+                [(ngModel)]="comment.comment"
+                rows="3"
+                placeholder="Write your comment..."
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label><strong>Your Rating</strong></label>
+              <input
+                type="range"
+                min="0"
+                max="5"
+                [(ngModel)]="comment.rating"
+                class="form-range"
+              />
+              {{ comment.rating }}/5
+            </div>
+            <button class="btn btn-success" (click)="addComment()">Add Comment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #loading>
+    <p class="text-center text-muted">Loading product details...</p>
+  </ng-template>
+  

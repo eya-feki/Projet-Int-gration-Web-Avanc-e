@@ -1,0 +1,73 @@
+/* Header Background and General Styles */
+.header-bg {
+    background: linear-gradient(to right, #ff7eb3, #ff758c);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Logo Styles */
+  .logo-img {
+    width: 50px; /* Adjust size */
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  /* Navigation Links */
+  .nav .nav-link {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+    padding: 0 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav .nav-link:hover {
+    color: #ffe5ec;
+  }
+  
+  .nav .active-link {
+    color: #ffe5ec;
+    font-weight: bold;
+  }
+  
+  /* Buttons */
+  .btn-outline-light {
+    border-color: white;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-outline-light:hover {
+    background-color: white;
+    color: #ff758c;
+  }
+  
+  .btn-light {
+    background-color: white;
+    color: #ff758c;
+    border: none;
+  }
+  
+  .btn-light:hover {
+    background-color: #ffe5ec;
+    color: #ff758c;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .header-bg .row {
+      text-align: center;
+    }
+  
+    .btn {
+      margin-bottom: 5px;
+    }
+  }
+  

@@ -1,0 +1,224 @@
+<div class="container mt-4">
+  <app-search
+  [rech]="search"
+  (searchChange)="updateSearch($event)"
+  (searchButtonClicked)="performSearch()"
+    ></app-search>
+    <div class="mb-4 d-flex flex-wrap justify-content-center gap-3">
+      <button
+        *ngFor="let category of categories"
+        class="btn btn-outline-primary category-button"
+        [class.active]="selectedCategoryId === category.id"
+        (click)="selectedCategoryId = category.id; fetchProductsByCategory(category.id)"
+      >
+        {{ category.name }}
+      </button>
+      <button
+        class="btn btn-outline-primary category-button"
+        [class.active]="selectedCategoryId === null"
+        (click)="selectedCategoryId = null; fetchAllProducts()"
+      >
+        All Categories
+      </button>
+    </div>
+
+  <!-- Add Product Button -->
+  <button class="btn btn-success mb-4" (click)="openAddModal()">Add Product</button>
+
+  <!-- Add Product Modal -->
+  <div
+    class="modal fade"
+    tabindex="-1"
+    [ngClass]="{ 'show d-block': addingProduct }"
+    style="background: rgba(0, 0, 0, 0.5);"
+    *ngIf="addingProduct"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add New Product</h5>
+          <button type="button" class="btn-close" (click)="cancelAdd()"></button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="addProduct()">
+            <div class="form-group">
+              <label for="productName">Product Name</label>
+              <input
+                id="productName"
+                type="text"
+                [(ngModel)]="newProduct.name"
+                name="name"
+                class="form-control"
+                placeholder="Enter product name"
+                required
+              />
+            </div>
+            <div class="form-group mt-3">
+              <label for="productPrice">Unit Price</label>
+              <input
+                id="productPrice"
+                type="number"
+                [(ngModel)]="newProduct.unitPrice"
+                name="unitPrice"
+                class="form-control"
+                placeholder="Enter price"
+                required
+              />
+            </div>
+            <div class="form-group mt-3">
+              <label for="productStock">Stock Quantity</label>
+              <input
+                id="productStock"
+                type="number"
+                [(ngModel)]="newProduct.stockQte"
+                name="stockQte"
+                class="form-control"
+                placeholder="Enter stock quantity"
+                required
+              />
+            </div>
+            <div class="form-group mt-3">
+              <label for="productImage">Image Path</label>
+              <input
+                id="productImage"
+                type="text"
+                [(ngModel)]="newProduct.image"
+                name="image"
+                class="form-control"
+                placeholder="Enter image path"
+                required
+              />
+            </div>
+            <div class="form-group mt-3">
+              <label for="productCategory">Category</label>
+              <select
+                id="productCategory"
+                [(ngModel)]="newProduct.category"
+                name="category"
+                class="form-select"
+                required
+              >
+                <option *ngFor="let category of categories" [value]="category.name">
+                  {{ category.name }}
+                </option>
+              </select>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success">Add Product</button>
+              <button type="button" class="btn btn-secondary" (click)="cancelAdd()">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product List Section -->
+  <h3>Product List</h3>
+  <div class="row">
+    <div *ngFor="let product of filteredProducts()" class="col-md-4 col-sm-6 mb-4">
+      <div class="card shadow-sm">
+        <img
+          class="card-img-top"
+          [src]="product.image"
+          [alt]="product.name"
+          style="height: 200px; object-fit: cover;"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">
+            <strong>Price:</strong> {{ product.unitPrice | currency }} <br />
+            <strong>Stock:</strong> {{ product.stockQte }} <br />
+            <strong>Category:</strong> {{ product.category }}
+          </p>
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-primary btn-sm" [routerLink]="['/pageProductDetail', product.reference]">
+              Details
+            </button>
+            <button class="btn btn-primary btn-sm" (click)="editProduct(product.id)">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteProduct(product.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Product Modal -->
+  <div
+    class="modal fade"
+    tabindex="-1"
+    [ngClass]="{ 'show d-block': editingProduct }"
+    style="background: rgba(0, 0, 0, 0.5);"
+    *ngIf="editingProduct"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Product</h5>
+          <button type="button" class="btn-close" (click)="cancelEdit()"></button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="saveProduct()">
+            <div class="form-group">
+              <label>Product Name</label>
+              <input
+                type="text"
+                [(ngModel)]="editingProduct.name"
+                class="form-control"
+                name="name"
+                required
+              />
+            </div>
+            <div class="form-group mt-3">
+              <label>Stock Quantity</label>
+              <input
+                type="number"
+                [(ngModel)]="editingProduct.stockQte"
+                class="form-control"
+                name="stockQte"
+                required
+              />
+            </div>
+            <div class="form-group mt-3">
+              <label>Unit Price</label>
+              <input
+                type="number"
+                [(ngModel)]="editingProduct.unitPrice"
+                class="form-control"
+                name="unitPrice"
+                required
+              />
+            </div>
+            <div class="form-group mt-3">
+              <label>Image Path</label>
+              <input
+                type="text"
+                [(ngModel)]="editingProduct.image"
+                class="form-control"
+                name="image"
+                required
+              />
+            </div>
+            <div class="form-group mt-3">
+              <label>Category</label>
+              <select
+                [(ngModel)]="editingProduct.category"
+                class="form-control"
+                name="category"
+                required
+              >
+                <option *ngFor="let category of categories" [value]="category.name">
+                  {{ category.name }}
+                </option>
+              </select>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

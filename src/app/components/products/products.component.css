@@ -1,0 +1,62 @@
+/* General Button Styles */
+button {
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Add Product Button - Pink Theme */
+button.btn-success {
+  background-color: #ff758c;
+  border: none;
+  color: white;
+}
+
+button.btn-success:hover {
+  background-color: #ff5773;
+  transform: scale(1.05);
+}
+
+/* Pink Theme for Edit and Details Buttons */
+button.btn-primary {
+  background-color: #ff758c;
+  border: none;
+  color: white;
+}
+
+button.btn-primary:hover {
+  background-color: #ff5773;
+  transform: scale(1.05);
+}
+
+/* Delete Button - Bootstrap Default */
+button.btn-danger {
+  background-color: #dc3545; /* Default Bootstrap red */
+  color: white;
+  border: none;
+}
+
+button.btn-danger:hover {
+  background-color: #c82333; /* Darker red on hover */
+  transform: scale(1.05);
+}
+
+/* Outline Buttons */
+button.btn-outline-primary {
+  color: #ff758c;
+  border: 2px solid #ff758c;
+  background-color: transparent;
+}
+
+button.btn-outline-primary:hover {
+  background-color: #ff758c;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Active State */
+button.btn-outline-primary.active {
+  background-color: #ff758c;
+  color: white;
+  border-color: #ff758c;
+}

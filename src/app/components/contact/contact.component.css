@@ -1,0 +1,88 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Container */
+.contact-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Header */
+.contact-header h3 {
+    text-align: center;
+    color: #ff758c;
+    font-weight: bold;
+}
+
+/* Address Section */
+.contact-info h4 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.contact-info address p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.contact-info i {
+    color: #ff758c;
+    margin-right: 10px;
+}
+
+/* Buttons */
+.btn-group .btn {
+    margin-right: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+    background-color: #ff758c;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #ff5773;
+    transform: scale(1.05);
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+/* Map Section */
+.contact-map h4 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.contact-map iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
