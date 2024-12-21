@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Cosmetify
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
@@ -57,3 +58,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# Projet-Int-gration-Web-Avanc-e
+projet angular boutique du produits cosmétiques 
+>>>>>>> 32bbb021b8702cfb3842c70e2be2b0bfc4601ef5
